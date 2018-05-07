@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cars:</strong>
+  <%= @booking.cars_id %>
+</p>
+
+<p>
+  <strong>Start dates:</strong>
+  <%= @booking.start_dates %>
+</p>
+
+<p>
+  <strong>End dates:</strong>
+  <%= @booking.end_dates %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

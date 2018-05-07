@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507081911) do
+ActiveRecord::Schema.define(version: 20180507102623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: :cascade do |t|
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "cars_id"
+    t.date     "start_dates"
+    t.date     "end_dates"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "cars", force: :cascade do |t|
     t.string   "name"
-    t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,17 +47,19 @@ ActiveRecord::Schema.define(version: 20180507081911) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "people", force: :cascade do |t|
-    t.string  "first_name", limit: 40
-    t.string  "last_name",  limit: 40
-    t.integer "age"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "users_id"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "reviews_id"
   end
 
   create_table "users", force: :cascade do |t|
