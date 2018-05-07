@@ -10,13 +10,20 @@
   <%= @user.email %>
 </p>
 
-  <strong>MicroPosts:</strong>
-  <% @user.microposts.each do |microposts| %>
-  <div class="alert alert_danger"><%= "» " %><%= microposts.content %></div>
-<% end %>
-
 <strong>Reviews:</strong>
-
-
+<% @user.reviews.each do |reviews| %></br>
+  <%= "» " %><%= reviews.message %>
+<% end %>
+<br><br>
+<strong>User items:</strong>
+<% @user.items.each do |items| %></br>
+  <%= items.name_items %>
+<% end %>
+</br></br>
+<strong>Bookings:</strong>
+<% @user.bookings.each do |bookings| %></br>
+  <%= bookings.item_id%><%= " » date end: " %><%= bookings.start_dates%>
+<% end %>
+</br></br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

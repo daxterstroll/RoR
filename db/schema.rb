@@ -11,55 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507102623) do
+ActiveRecord::Schema.define(version: 20180507133424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.integer  "cars_id"
+    t.integer  "user_id"
+    t.integer  "items_id"
     t.date     "start_dates"
     t.date     "end_dates"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string   "username"
-    t.text     "body"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
-
-  create_table "microposts", force: :cascade do |t|
-    t.string   "content"
+  create_table "items", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "name_items"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "items", ["user_id"], name: "fki_items_fkey", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "reviews_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,5 +48,4 @@ ActiveRecord::Schema.define(version: 20180507102623) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "posts"
 end

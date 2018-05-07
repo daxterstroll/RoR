@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @item.user_id %>
+</p>
+
+<p>
+  <strong>Name items:</strong>
+  <%= @item.name_items %>
+</p>
+
+<strong>Reviews:</strong>
+<% @item.reviews.each do |reviews| %></br>
+  <%= "» " %><%= reviews.message %>
+<% end %>
+<br><br>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

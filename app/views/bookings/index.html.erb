@@ -5,7 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Cars</th>
+      <th>User</th>
+      <th>Items</th>
       <th>Start dates</th>
       <th>End dates</th>
       <th colspan="3"></th>
@@ -15,7 +16,8 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.cars_id %></td>
+        <td><%= booking.user_id %></td>
+        <td><%= booking.items_id %></td>
         <td><%= booking.start_dates %></td>
         <td><%= booking.end_dates %></td>
         <td><%= link_to 'Show', booking %></td>

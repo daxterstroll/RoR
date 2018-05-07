@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  cars_id: 1
+  user_id: 1
+  items_id: 1
   start_dates: 2018-05-07
   end_dates: 2018-05-07
 
 two:
-  cars_id: 1
+  user_id: 1
+  items_id: 1
   start_dates: 2018-05-07
   end_dates: 2018-05-07
