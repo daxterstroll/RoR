@@ -7,17 +7,17 @@
 
 <p>
   <strong>Items:</strong>
-  <%= @booking.items_id %>
+  <%= @booking.item_id %>
 </p>
 
 <p>
   <strong>Start dates:</strong>
-  <%= @booking.start_dates %>
+  <%= @booking.started_at %>
 </p>
 
 <p>
   <strong>End dates:</strong>
-  <%= @booking.end_dates %>
+  <%= @booking.ended_on %>
 </p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |

@@ -17,12 +17,12 @@
 <br><br>
 <strong>User items:</strong>
 <% @user.items.each do |items| %></br>
-  <%= items.name_items %>
+  <%= items.name %>
 <% end %>
 </br></br>
 <strong>Bookings:</strong>
 <% @user.bookings.each do |bookings| %></br>
-  <%= bookings.item_id%><%= " » date end: " %><%= bookings.start_dates%>
+  <%= bookings.item_id%><%= " » Ended on: " %><%= bookings.ended_on%>
 <% end %>
 </br></br>
 <%= link_to 'Edit', edit_user_path(@user) %> |
