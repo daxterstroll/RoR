@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  has_many :reviews
+  has_many :reviews, :as => :reviewable
 end

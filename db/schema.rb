@@ -11,35 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507133424) do
+ActiveRecord::Schema.define(version: 20180510130008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "items_id"
-    t.date     "start_dates"
-    t.date     "end_dates"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "item_id"
+    t.date     "started_at"
+    t.date     "ended_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "items", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name_items"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "items", ["user_id"], name: "fki_items_fkey", using: :btree
-
-  create_table "reviews", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
