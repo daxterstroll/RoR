@@ -11,15 +11,18 @@
 </p>
 
 <strong>Reviews:</strong>
-<% @user.reviews.each do |reviews| %></br>
+<% @user.reviews.each do |reviews| %><br>
   <%= "» " %><%= reviews.message %>
 <% end %>
 <br><br>
+
 <strong>User items:</strong>
-<% @user.items.each do |items| %></br>
-  <%= items.name %>
-<% end %>
+  <% @user.items.each do |items| %><br>
+  <strong>Name:</strong> <%= items.name %>
+  <% end %>
+
 </br></br>
+
 <strong>Bookings:</strong>
 <% @user.bookings.each do |bookings| %></br>
   <%= bookings.item_id%><%= " » Ended on: " %><%= bookings.ended_on%>

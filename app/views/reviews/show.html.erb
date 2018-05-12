@@ -10,5 +10,10 @@
   <%= @review.message %>
 </p>
 
+<p>
+  <strong>Table:</strong>
+  <%= @review.reviewable_type %>
+</p>
+
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>
