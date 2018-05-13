@@ -11,28 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180512205725) do
+ActiveRecord::Schema.define(version: 20180513165558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "account_histories", force: :cascade do |t|
-    t.integer  "account_id"
-    t.integer  "credit_rating"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "account_histories", ["account_id"], name: "index_account_histories_on_account_id", using: :btree
-
-  create_table "accounts", force: :cascade do |t|
-    t.integer  "supplier_id"
-    t.string   "account_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "accounts", ["supplier_id"], name: "index_accounts_on_supplier_id", using: :btree
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,8 +39,10 @@ ActiveRecord::Schema.define(version: 20180512205725) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "review_id"
   end
 
+  add_index "items", ["review_id"], name: "fki_reviews_id", using: :btree
   add_index "items", ["user_id"], name: "fki_items_fkey", using: :btree
 
   create_table "reviews", force: :cascade do |t|
@@ -73,10 +57,29 @@ ActiveRecord::Schema.define(version: 20180512205725) do
   add_index "reviews", ["reviewable_id"], name: "fki_reviewable_id_fkey", using: :btree
   add_index "reviews", ["user_id"], name: "fki_users_fkey", using: :btree
 
-  create_table "suppliers", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string   "name"
+    t.date     "time"
+    t.integer  "student_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subjects", ["student_id"], name: "index_subjects_on_student_id", using: :btree
+  add_index "subjects", ["teacher_id"], name: "index_subjects_on_teacher_id", using: :btree
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,15 +88,22 @@ ActiveRecord::Schema.define(version: 20180512205725) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "city_id"
+    t.integer  "item_id"
+    t.integer  "review_id"
   end
 
   add_index "users", ["city_id"], name: "fki_city_id_fkey", using: :btree
+  add_index "users", ["item_id"], name: "fki_items_id", using: :btree
+  add_index "users", ["review_id"], name: "fki_review_id", using: :btree
 
   add_foreign_key "bookings", "items", name: "item_id_fkey"
   add_foreign_key "bookings", "users", name: "user_id_fkey"
+  add_foreign_key "items", "reviews", name: "reviews_id"
   add_foreign_key "items", "users", name: "user_id_fkey"
-  add_foreign_key "reviews", "items", column: "reviewable_id", name: "reviewable_id_fkey"
-  add_foreign_key "reviews", "users", column: "reviewable_id", name: "reviewable_id_fkey1"
   add_foreign_key "reviews", "users", name: "user_id_fkey"
+  add_foreign_key "subjects", "students"
+  add_foreign_key "subjects", "teachers"
   add_foreign_key "users", "cities", name: "city_id_fkey"
+  add_foreign_key "users", "items", name: "item_id"
+  add_foreign_key "users", "reviews", name: "review_id"
 end
