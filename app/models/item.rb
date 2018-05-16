@@ -3,4 +3,5 @@ class Item < ActiveRecord::Base
   belongs_to :booking
   belongs_to :user
   belongs_to :city
+
 end
