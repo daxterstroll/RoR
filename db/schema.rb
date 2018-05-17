@@ -57,31 +57,6 @@ ActiveRecord::Schema.define(version: 20180513165558) do
   add_index "reviews", ["reviewable_id"], name: "fki_reviewable_id_fkey", using: :btree
   add_index "reviews", ["user_id"], name: "fki_users_fkey", using: :btree
 
-  create_table "students", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string   "name"
-    t.date     "time"
-    t.integer  "student_id"
-    t.integer  "teacher_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "subjects", ["student_id"], name: "index_subjects_on_student_id", using: :btree
-  add_index "subjects", ["teacher_id"], name: "index_subjects_on_teacher_id", using: :btree
-
-  create_table "teachers", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
