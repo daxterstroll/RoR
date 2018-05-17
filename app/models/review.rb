@@ -11,6 +11,8 @@ class Review < ActiveRecord::Base
   validate :must_be_booking
 
   def must_be_booking
-    errors.add(:reviewable, 'Must be booking to leave a review') unless reviewable == Booking.find_by(item_id: reviewable_id)
-  end
+    errors.add(:reviewable_id, 'Must be booking to leave a review') unless
+        reviewable_id == Booking.find_by(item_id: reviewable_id).item_id &&
+            user_id == Booking.find_by(item_id: reviewable_id).user_id
+    end
 end
