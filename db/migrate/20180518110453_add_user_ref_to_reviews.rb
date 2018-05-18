@@ -3,4 +3,3 @@ class AddUserRefToReviews < ActiveRecord::Migration
     add_reference :reviews, :user, index: true, foreign_key: true
   end
 end
- 

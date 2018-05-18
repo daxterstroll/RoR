@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
+#Подключает полиморфизм
   has_many :reviews, :as => :reviewable
+
+#Поделючает предметы
   has_many :items
-  has_many :bookings
+
+#Подключает выбор города
   belongs_to :city
 end

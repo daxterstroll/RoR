@@ -1,16 +1,7 @@
 class Review < ActiveRecord::Base
-
+#Подключает полиморфизм
   belongs_to :reviewable, :polymorphic => true
-  belongs_to :booking
+
+#Подключает выбор пользователя
   belongs_to :user
-  belongs_to :item
-
-  validates :reviewable_id, presence: true
-  validates :reviewable_type, presence: true
-  validate :must_be_booking
-
-  def must_be_booking
-    errors.add(:reviewable_id, 'Must be booking to leave a review') unless
-        user_id == User.find(user_id).bookings.find_by(user_id: user_id).user_id &&reviewable_id == User.find(user_id).bookings.find_by(item_id: reviewable_id).item_id
-  end
 end

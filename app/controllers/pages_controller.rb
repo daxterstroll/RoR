@@ -3,4 +3,7 @@ class PagesController < ApplicationController
     @title = 'About Us'
     @content = 'This is the about page'
   end
+  def index
+    @title = 'TravelMateBlog'
+  end
 end
