@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 
 #Подключает выбор города
   belongs_to :city
+
+#Подключает все комментарии всех предметов пользователя
+  has_many :items_reviews, :through => :items, :source => :reviews
 end
