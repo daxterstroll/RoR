@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 #Подключает полиморфизм
   has_many :reviews, :as => :reviewable
 
+#Поделючает резервации
+  has_many :bookings
+
 #Поделючает предметы
   has_many :items
 
