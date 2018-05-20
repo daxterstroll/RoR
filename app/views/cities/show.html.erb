@@ -5,5 +5,17 @@
   <%= @city.name %>
 </p>
 
+<p>
+  <strong>Users:</strong>
+<% @city.users.each do |users| %><br>
+  <%= users.name %><br>
+    <strong><%= "» Items:" %></strong>
+    <% users.items.each do |items| %>
+      <%= items.name %> |
+    <% end %><br>
+
+<% end %>
+</p>
+
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>

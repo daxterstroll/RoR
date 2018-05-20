@@ -6,27 +6,30 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  <strong>From:</strong>
+  <%= @user.city.name %>
 </p>
 
+<p>
 <strong>Reviews:</strong>
 <% @user.reviews.each do |reviews| %><br>
   <%= "» " %><%= reviews.message %>
 <% end %>
-<br><br>
+</p>
 
-<strong>User items:</strong>
-  <% @user.items.each do |items| %><br>
-  <strong>Name:</strong> <%= items.name %>
+<p>
+<strong>Items:</strong>
+  <% @user.items.each do |items| %>
+  <%= items.name %> |
   <% end %>
+</p>
 
-</br></br>
-
+<p>
 <strong>Bookings:</strong>
 <% @user.bookings.each do |bookings| %></br>
-  <%= bookings.item_id%><%= " » Ended on: " %><%= bookings.ended_on%>
+  <%= bookings.item.name%><%= " » Ended on: " %><%= bookings.ended_on%>
 <% end %>
-</br></br>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

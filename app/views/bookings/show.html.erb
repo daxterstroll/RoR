@@ -2,21 +2,21 @@
 
 <p>
   <strong>User:</strong>
-  <%= @booking.user_id %>
+  <%= @booking.user.name %>
 </p>
 
 <p>
-  <strong>Items:</strong>
-  <%= @booking.item_id %>
+  <strong>Item:</strong>
+  <%= @booking.item.name %>
 </p>
 
 <p>
-  <strong>Start dates:</strong>
+  <strong>Started at:</strong>
   <%= @booking.started_at %>
 </p>
 
 <p>
-  <strong>End dates:</strong>
+  <strong>Ended on:</strong>
   <%= @booking.ended_on %>
 </p>
 
