@@ -1,16 +1,12 @@
 class User < ActiveRecord::Base
-#Подключает полиморфизм
-  has_many :reviews, :as => :reviewable
-
-#Поделючает резервации
+  # connected reviews
+  has_many :reviews, as: :reviewable
+  # connected bookings
   has_many :bookings
-
-#Поделючает предметы
+  # connected items
   has_many :items
-
-#Подключает выбор города
+  # connected choice city
   belongs_to :city
-
-#Подключает все комментарии всех предметов пользователя
-  has_many :items_reviews, :through => :items, :source => :reviews
+  # connected all reviews for all items users
+  has_many :items_reviews, through: :items, source: :reviews
 end

@@ -1,7 +1,6 @@
 class Booking < ActiveRecord::Base
-#Поделючает выбор пользователя
+  # connected choice user
   belongs_to :user
-
-#Подключает выбор предмета
+  # connected choice item
   belongs_to :item
 end

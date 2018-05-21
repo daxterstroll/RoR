@@ -11,26 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519134841) do
+ActiveRecord::Schema.define(version: 20180521101818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "Items_Reviews", id: false, force: :cascade do |t|
-    t.integer "item_id",   null: false
-    t.integer "review_id", null: false
-  end
-
-  add_index "Items_Reviews", ["item_id", "review_id"], name: "index_Items_Reviews_on_item_id_and_review_id", using: :btree
-  add_index "Items_Reviews", ["review_id", "item_id"], name: "index_Items_Reviews_on_review_id_and_item_id", using: :btree
-
   create_table "bookings", force: :cascade do |t|
     t.date     "started_at"
     t.date     "ended_on"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "item_id"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "bookings", ["item_id"], name: "index_bookings_on_item_id", using: :btree
@@ -52,12 +44,12 @@ ActiveRecord::Schema.define(version: 20180519134841) do
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "message"
     t.text     "reviewable_type"
     t.integer  "reviewable_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "user_id"
+    t.string   "message",         limit: 150
   end
 
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
@@ -67,7 +59,6 @@ ActiveRecord::Schema.define(version: 20180519134841) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "city_id"
-    t.integer  "item_id"
   end
 
   add_index "users", ["city_id"], name: "fki_city_id", using: :btree

@@ -1,7 +1,6 @@
 class Item < ActiveRecord::Base
-#Подключает полиморфизм
-  has_many :reviews, :as => :reviewable
-
-#подключает таблицу пользователей
+  # connected reviews
+  has_many :reviews, as: :reviewable
+  # connected user
   belongs_to :user
 end

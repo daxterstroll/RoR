@@ -1,7 +1,6 @@
 class City < ActiveRecord::Base
-#подключает пользователей
+  # show users
   has_many :users
-
-#добавляет предметы через пользователя
+  # add items to user's city
   has_many :items, through: :users
 end
