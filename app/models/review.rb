@@ -6,6 +6,9 @@ class Review < ActiveRecord::Base
   # checking on booking
   validate :must_be_booking
   def must_be_booking
-    errors.add(:reviewable, 'You must rent a item to leave a review') unless User.joins(bookings: :item).exists?( :users => { :id => user_id }, :bookings => {:item_id => reviewable_id}) == true
+    bool = User.joins(bookings: :item)
+               .exists?(users: { id: user_id },
+                        bookings: { item_id: reviewable_id })
+    bool == true ? return : errors.add(:reviewable, 'You have not booked')
   end
 end
