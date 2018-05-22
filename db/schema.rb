@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20180521101818) do
   create_table "bookings", force: :cascade do |t|
     t.date     "started_at"
     t.date     "ended_on"
-    t.integer  "item_id"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "item_id"
+    t.integer  "user_id"
   end
 
   add_index "bookings", ["item_id"], name: "index_bookings_on_item_id", using: :btree
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20180521101818) do
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.text     "reviewable_type"
+    t.string   "reviewable_type"
     t.integer  "reviewable_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -61,11 +61,11 @@ ActiveRecord::Schema.define(version: 20180521101818) do
     t.integer  "city_id"
   end
 
-  add_index "users", ["city_id"], name: "fki_city_id", using: :btree
+  add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree
 
   add_foreign_key "bookings", "items"
   add_foreign_key "bookings", "users"
   add_foreign_key "items", "users"
   add_foreign_key "reviews", "users"
-  add_foreign_key "users", "cities", name: "city_id"
+  add_foreign_key "users", "cities"
 end

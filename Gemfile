@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'will_paginate', '~> 3.1.0'
 gem 'rails_admin', '~> 1.3'
 gem 'nokogiri', '~> 1.8.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
