@@ -21,9 +21,15 @@
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    <%= will_paginate @items %>
   </tbody>
 </table>
+</br>
+<div class="apple_pagination">
+  <div class="page_info">
+    <%= page_entries_info @items %>
+  </div>
+  <%= will_paginate @items, :container => false %>
+</div>
 
 <br>
 

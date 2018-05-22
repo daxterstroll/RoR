@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-  before_action :set_city, only: [:show, :edit, :update, :destroy]
+  before_action :set_city, only: %i[show edit update destroy]
 
   # GET /cities
   # GET /cities.json

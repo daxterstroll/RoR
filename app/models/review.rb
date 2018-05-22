@@ -7,15 +7,13 @@ class Review < ActiveRecord::Base
   validate :must_be_booking
   def must_be_booking
     if reviewable_type == 'Item'
-      bool = User.joins(bookings: :item)
-                 .exists?(users: { id: user_id },
-                          bookings: { item_id: reviewable_id })
-      bool == true ? return : errors.add(:reviewable, 'You have not booked')
+      errors.add(:reviewable, 'You have not booked') unless
+          Booking.exists?(user_id: user_id, item_id: reviewable_id)
     elsif reviewable_type == 'User'
-      bool = User.joins(bookings: :item)
-                 .exists?(users: { id: user_id},
-                          items: { user_id: reviewable_id})
-      bool == true ? return : errors.add(:reviewable, 'You are not trading')
+      errors.add(:reviewable, 'You are not trading') unless
+          User.joins(bookings: :item)
+              .exists?(users: { id: user_id },
+                       items: { user_id: reviewable_id })
     end
   end
 end

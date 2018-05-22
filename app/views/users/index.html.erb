@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
-
+<h3><%= link_to 'New User', new_user_path %></h3>
+<h1 align="center">Users</h1>
 <table>
   <thead>
     <tr>
@@ -21,9 +21,11 @@
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-    <%= will_paginate @users %>
   </tbody>
 </table>
-<br>
-
-<%= link_to 'New User', new_user_path %>
+    <div class="apple_pagination">
+      <div class="page_info">
+        <%= page_entries_info @items %>
+      </div>
+      <%= will_paginate @items, :container => false %>
+    </div>
