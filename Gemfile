@@ -3,6 +3,7 @@ ruby '2.5.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'capistrano-rails', group: :development
 gem 'coffee-rails', '~> 4.1.0'
+gem 'foreman'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'nokogiri', '~> 1.8.2'
