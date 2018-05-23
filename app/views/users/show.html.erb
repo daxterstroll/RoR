@@ -25,10 +25,10 @@
 </p>
 
 <p>
-<strong>Bookings:</strong>
-<% @user.bookings.each do |bookings| %></br>
-  <%= bookings.item.name%><%= " » Ended on: " %><%= bookings.ended_on%>
-<% end %>
+  <strong>Bookings:</strong>
+  <% @user.bookings.each do |bookings| %>
+    <%= bookings.item.name %><%= " » Ended on: " %><%= bookings.ended_on %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

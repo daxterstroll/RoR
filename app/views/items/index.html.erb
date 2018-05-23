@@ -23,14 +23,10 @@
     <% end %>
   </tbody>
 </table>
-</br>
 <div class="apple_pagination">
   <div class="page_info">
     <%= page_entries_info @items %>
   </div>
   <%= will_paginate @items, :container => false %>
 </div>
-
-<br>
-
 <%= link_to 'New Item', new_item_path %>

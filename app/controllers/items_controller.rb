@@ -1,28 +1,14 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
-  # GET /items
-  # GET /items.json
   def index
     @items = Item.paginate(page: params[:page], per_page: 5)
   end
 
-  # GET /items/1
-  # GET /items/1.json
-  def show
-  end
-
-  # GET /items/new
   def new
     @item = Item.new
   end
 
-  # GET /items/1/edit
-  def edit
-  end
-
-  # POST /items
-  # POST /items.json
   def create
     @item = Item.new(item_params)
 
@@ -37,8 +23,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
       if @item.update(item_params)
@@ -51,8 +35,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
     @item.destroy
     respond_to do |format|

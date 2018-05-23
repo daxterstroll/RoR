@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :reviews
   resources :items
   resources :users
-  resources :booking
+  resources :bookings
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  root 'pages#index', as: 'home'
+  root 'pages#index'
   get 'about' => 'pages#about', as: 'about'
 end
