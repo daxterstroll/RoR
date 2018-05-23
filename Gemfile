@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 gem 'bcrypt', '~> 3.1.7'
-gem 'bundler', '>= 1.15.2'
 gem 'capistrano-rails', group: :development
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
