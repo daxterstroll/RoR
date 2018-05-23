@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: development_db
+  database: project_development
 
 test:
   <<: *default
-  database: test_db
+  database: project_test
 
 production:
   <<: *default
-  database: production_db
+  database: roject_production
