@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.5.1'
 gem 'bundler', '1.16.1'
 gem 'will_paginate', '~> 3.1.0'
 gem 'rails_admin', '~> 1.3'

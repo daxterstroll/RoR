@@ -99,7 +99,7 @@ GEM
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
     kgio (2.11.2)
-    libv8 (3.16.14.19-x86_64-linux)
+    libv8 (3.16.14.19)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -241,6 +241,9 @@ DEPENDENCIES
   unicorn
   web-console (~> 2.0)
   will_paginate (~> 3.1.0)
+
+RUBY VERSION
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.1
