@@ -15,9 +15,13 @@ class ItemsController < ApplicationController
     render action: :index
   end
 
+  def boots
+    @items = Item.boots.paginate(page: params[:page], per_page: 5)
+    render action: :index
+  end
+
   def new
     @item = Item.new
-    render action: :index
   end
 
   def create

@@ -10,6 +10,7 @@
     <li role="presentation"><%= link_to "All", items_path %></li>
     <li role="presentation"><%= link_to "Things", things_items_path %></li>
     <li role="presentation"><%= link_to "Beverages", beverages_items_path %></li>
+    <li role="presentation"><%= link_to "Boots", boots_items_path %></li>
   </ul>
 </div>
 
@@ -23,11 +24,10 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.user.name %></td>
+        <td><%= item.user_id %></td>
         <td><%= item.name %></td>
         <td><%= item.category_id %></td>
         <td><%= link_to 'Show', item %></td>

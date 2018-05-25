@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get :things
       get :beverages
+      get :boots
     end
   end
   resources :users

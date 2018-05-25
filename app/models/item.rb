@@ -7,4 +7,5 @@ class Item < ActiveRecord::Base
 
   scope :things, -> { where('category_id = 2') }
   scope :beverages, -> { where('category_id = 1') }
+  scope :boots, -> { where('category_id = 5') }
 end
