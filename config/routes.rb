@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   resources :cities
   resources :bookings
   resources :reviews
-  resources :items
+  resources :items do
+    collection do
+      get :things
+      get :beverages
+    end
+  end
   resources :users
   resources :bookings
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

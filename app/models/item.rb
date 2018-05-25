@@ -5,5 +5,6 @@ class Item < ActiveRecord::Base
   # connected user
   belongs_to :user
 
-  scope :almost_completed, -> { where('category_id = 1') }
+  scope :things, -> { where('category_id = 2') }
+  scope :beverages, -> { where('category_id = 1') }
 end

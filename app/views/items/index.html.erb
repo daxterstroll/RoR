@@ -1,7 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Items</h1>
+<div class="header clearfix">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <li role="presentation" class="active" ></li>
+    </ul>
+  </nav>
+  <ul class="nav nav-pills pull-left">
+    <li role="presentation"><%= link_to "All", items_path %></li>
+    <li role="presentation"><%= link_to "Things", things_items_path %></li>
+    <li role="presentation"><%= link_to "Beverages", beverages_items_path %></li>
+  </ul>
+</div>
 
+<h1>Listing Items</h1>
 <table>
   <thead>
     <tr>
