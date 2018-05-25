@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-    @items = Item.paginate(page: params[:page], per_page: 5)
+    @items = Item.almost_completed.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -51,6 +51,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:user_id, :name)
+      params.require(:item).permit(:user_id, :name, :category_id)
     end
 end

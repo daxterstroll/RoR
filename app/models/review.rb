@@ -7,12 +7,13 @@ class Review < ActiveRecord::Base
   validate :must_be_booking
   def must_be_booking
     if reviewable.is_a?(Item)
-      errors.add(:reviewable, 'You have not booked') unless
-          Booking.exists?(user_id: user_id, item_id: reviewable_id)
+      return if Booking.exists?(user_id: user_id, item_id: reviewable_id)
+      errors.add(:reviewable, 'You have not booked')
     elsif reviewable.is_a?(User)
-      errors.add(:reviewable, 'You are not trading') unless
-          User.joins(bookings: :item).exists?(users: { id: user_id },
-                                              items: { user_id: reviewable_id })
+      return if User.joins(bookings: :item)
+                    .exists?(users: { id: user_id },
+                             items: { user_id: reviewable_id })
+      errors.add(:reviewable, 'You are not trading')
     end
   end
 end
