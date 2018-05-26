@@ -16,8 +16,16 @@
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.user.name %></td>
-        <td><%= booking.item.name %></td>
+        <td>
+          <% if booking.user.present? %>
+            <%= booking.user.name %>
+          <% end %>
+        </td>
+        <td>
+          <% if booking.item.present? %>
+            <%= booking.item.name %>
+          <% end %>
+        </td>
         <td><%= booking.started_at %></td>
         <td><%= booking.ended_on %></td>
         <td><%= link_to 'Show', booking %></td>

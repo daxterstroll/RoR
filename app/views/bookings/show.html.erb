@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @booking.user.name %>
-</p>
+<% if @booking.user.present? %>
+  <p>
+    <strong>User:</strong>
+    <%= @booking.user.name %>
+  </p>
+<% end %>
 
-<p>
-  <strong>Item:</strong>
-  <%= @booking.item.name %>
-</p>
+<% if @booking.item.present? %>
+  <p>
+    <strong>Item:</strong>
+    <%= @booking.item.name %>
+  </p>
+<% end %>
 
 <p>
   <strong>Started at:</strong>
