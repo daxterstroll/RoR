@@ -2,7 +2,13 @@
 
 <%= render 'shared/submenu' %>
 
+<%= form_tag items_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <h1>Listing Items</h1>
+
 <table>
   <thead>
     <tr>
