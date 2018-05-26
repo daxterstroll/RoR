@@ -7,14 +7,17 @@
 
 <p>
   <strong>Users:</strong>
-<% @city.users.each do |users| %><br>
-  <%= users.name %><br>
-    <strong><%= "» Items:" %></strong>
-    <% users.items.each do |items| %>
-      <%= items.name %> |
-    <% end %><br>
-
-<% end %>
+  <% if @city.users.present? %>
+    <% @city.users.each do |users| %><br>
+      <%= users.name %><br>
+      <% if users.items.present? %>
+        <strong><%= "» Items:" %></strong>
+        <% users.items.each do |items| %>
+          <%= items.name %> |
+      <% end %><br>
+      <% end %>
+    <% end %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_city_path(@city) %> |

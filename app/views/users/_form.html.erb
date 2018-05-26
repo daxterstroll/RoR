@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :city %>
-    <%= f.collection_select :city_id, City.order(:name), :id, :name, { include_black: true } %>
+    <%= f.collection_select :city_id, City.order(:name), :id, :name, {:include_blank => ''} %>
   </div>
   <div class="actions">
     <%= f.submit %>

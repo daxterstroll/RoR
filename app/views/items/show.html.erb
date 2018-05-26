@@ -1,19 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @item.user.name%>
-</p>
+<% if @item.user.present? %>
+  <p>
+    <strong>User:</strong>
+    <%= @item.user.name%>
+  </p>
+<% end %>
 
 <p>
   <strong>Name:</strong>
   <%= @item.name %>
 </p>
 
-<strong>Reviews:</strong>
-<% @item.reviews.each do |reviews| %><br>
-  <%= "» " %><%= reviews.message %>
+<% if @item.category.present? %>
+  <p>
+    <strong>Category:</strong>
+    <%= @item.category.name %>
+  </p>
 <% end %>
+
+<% if @item.reviews.present? %>
+  <strong>Reviews:</strong>
+  <% @item.reviews.each do |reviews| %><br>
+    <%= "» " %><%= reviews.message %>
+  <% end %>
+<% end %>
+
 <br><br>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |

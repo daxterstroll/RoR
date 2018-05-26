@@ -5,31 +5,39 @@
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>From:</strong>
-  <%= @user.city_id %>
-</p>
-
-<p>
-<strong>Reviews:</strong>
-<% @user.reviews.each do |reviews| %><br>
-  <%= "» " %><%= reviews.message %>
+<% if @user.city.present? %>
+  <p>
+    <strong>From:</strong>
+    <%= @user.city.name %>
+  </p>
 <% end %>
-</p>
 
+<% if @user.reviews.present? %>
 <p>
-<strong>Items:</strong>
-  <% @user.items.each do |items| %>
-  <%= items.name %> |
+  <strong>Reviews:</strong>
+  <% @user.reviews.each do |reviews| %><br>
+    <%= "» " %><%= reviews.message %>
   <% end %>
 </p>
+<% end %>
 
-<p>
-  <strong>Bookings:</strong>
-  <% @user.bookings.each do |bookings| %>
-    <%= bookings.item.name %><%= " » Ended on: " %><%= bookings.ended_on %>
-  <% end %>
-</p>
+<% if @user.items.present? %>
+  <p>
+    <strong>Items:</strong>
+    <% @user.items.each do |items| %>
+      <%= items.name %> |
+    <% end %>
+  </p>
+<% end %>
+
+<% if @user.bookings.present? %>
+  <p>
+    <strong>Bookings:</strong>
+    <% @user.bookings.each do |bookings| %>
+      <%= bookings.item.name %><%= " » Ended on: " %><%= bookings.ended_on %>
+    <% end %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

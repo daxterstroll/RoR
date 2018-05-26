@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @review.user.name %>
-</p>
+<% if @review.user.present? %>
+  <p>
+    <strong>User:</strong>
+    <%= @review.user.name %>
+  </p>
+<% end %>
 
 <p>
   <strong>Message:</strong>
   <%= @review.message %>
 </p>
 
-<p>
-  <strong>Table:</strong>
-  <%= @review.reviewable_type %> => <%= @review.reviewable_id %>
-</p>
+<% if @review.reviewable.is_a?(Item) %>
+  <p>
+    <strong>Item:</strong>
+    <%= @review.reviewable.name %>
+  </p>
+<% elsif @review.reviewable.is_a?(User) %>
+  <p>
+    <strong>User:</strong>
+    <%= @review.reviewable.name %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>

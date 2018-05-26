@@ -1,10 +1,17 @@
-  <section class="post-head">
-    <small>
-      <time><%= item.name %></time>
-      <% if item.category.present? %>
-        |
-        <%= link_to item.category.name, item.category %>
-      <% end %>
-      |
-    </small>
-  </section>
+<% if item.user.present? %>
+  <p>
+    <strong>User:</strong>
+    <%= item.user.name%>
+  </p>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= item.name %>
+</p>
+
+<td><%= link_to 'Show', item %></td>
+<td><%= link_to 'Edit', edit_item_path(item) %></td>
+<td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+<hr>
