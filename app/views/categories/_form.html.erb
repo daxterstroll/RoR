@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :parent_id %>
-    <%= f.collection_select :parent_id, @categories, :id, :name, {:include_blank => ''} %>
+    <%= f.collection_select :parent_id, @categories, :id, :name, prompt: '' %>
   </div>
 
   <div class="actions">

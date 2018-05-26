@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<h1 align="center">Listing Items</h1>
+
 <%= render 'shared/submenu' %>
 
+<%=  link_to 'New Item', new_item_path %>
 <%= form_tag items_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search" %>
 <% end %>
-
-<h1>Listing Items</h1>
 
 <table>
   <thead>
@@ -46,4 +47,3 @@
   </div>
   <%= will_paginate @items, :container => false %>
 </div>
-<%= link_to 'New Item', new_item_path %>

@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.search(params[:search]).paginate(page: params[:page],
-                                                   per_page: 10)
+                                                   per_page: 5)
   end
 
   def new

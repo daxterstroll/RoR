@@ -1,4 +1,8 @@
-<% Category.roots.each do |category| %>
-  </br><%= link_to category.name, category %></br>
-  <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %>
-<% end %>
+<nav>
+  <ul>
+    <% Category.roots.each do |category| %>
+      <li><%= link_to category.name, category %></li>
+        <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %>
+    <% end %>
+  </ul>
+</nav>

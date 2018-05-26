@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.order(:name), :id, :name %>
+    <%= f.collection_select :user_id, User.order(:name), :id, :name, prompt: '' %>
   </div>
   <div class="field">
     <%= f.label :message %><br>

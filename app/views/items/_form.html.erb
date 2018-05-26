@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :user %>
-    <%= f.collection_select :user_id, User.order(:name), :id, :name, include_black: '' %>
+    <%= f.collection_select :user_id, User.order(:name), :id, :name, prompt: '' %>
   </div>
   <div class="field">
     <%= f.label :category_id %>
-    <%= f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => ''} %>
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, prompt: '' %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
