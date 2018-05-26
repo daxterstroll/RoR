@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user %><br>
-    <%= f.number_field :user_id %>
+    <%= f.label :user %>
+    <%= f.collection_select :user_id, User.order(:name), :id, :name, { include_black: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, { include_black: true } %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.number_field :category_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

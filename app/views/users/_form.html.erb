@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city_id %>
+    <%= f.label :city %>
+    <%= f.collection_select :city_id, City.order(:name), :id, :name, { include_black: true } %>
   </div>
   <div class="actions">
     <%= f.submit %>

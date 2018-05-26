@@ -18,6 +18,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 gem 'will_paginate', '~> 3.1.0'
+gem 'ancestry'
 group :development, :test do
   gem 'byebug'
 end

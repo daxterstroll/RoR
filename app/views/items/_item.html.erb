@@ -1,0 +1,10 @@
+  <section class="post-head">
+    <small>
+      <time><%= item.name %></time>
+      <% if item.category.present? %>
+        |
+        <%= link_to item.category.name, item.category %>
+      <% end %>
+      |
+    </small>
+  </section>

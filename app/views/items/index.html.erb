@@ -1,18 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="header clearfix">
-  <nav>
-    <ul class="nav nav-pills pull-right">
-      <li role="presentation" class="active" ></li>
-    </ul>
-  </nav>
-  <ul class="nav nav-pills pull-left">
-    <li role="presentation"><%= link_to "All", items_path %></li>
-    <li role="presentation"><%= link_to "Things", things_items_path %></li>
-    <li role="presentation"><%= link_to "Beverages", beverages_items_path %></li>
-    <li role="presentation"><%= link_to "Boots", boots_items_path %></li>
-  </ul>
-</div>
+<%= render 'shared/submenu' %>
 
 <h1>Listing Items</h1>
 <table>
@@ -28,9 +16,13 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.user_id %></td>
+        <% if item.user.present? %>
+          <td><%= item.user.name %></td>
+        <% end %>
         <td><%= item.name %></td>
-        <td><%= item.category_id %></td>
+        <% if item.category.present? %>
+          <td><%= item.category.name %></td>
+        <% end %>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -9,6 +9,14 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show
+
+  end
+
+  def edit
+
+  end
+
   def create
     @booking = Booking.new(booking_params)
 
