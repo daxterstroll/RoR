@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180526000205) do
+ActiveRecord::Schema.define(version: 20180528201413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20180526000205) do
   end
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+
+  create_table "category_fields", force: :cascade do |t|
+    t.string   "filter"
+    t.string   "value"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "category_fields", ["category_id"], name: "index_category_fields_on_category_id", using: :btree
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(version: 20180526000205) do
 
   add_foreign_key "bookings", "items"
   add_foreign_key "bookings", "users"
+  add_foreign_key "category_fields", "categories"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "reviews", "users"

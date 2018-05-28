@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filter:</strong>
+  <%= @category_field.filter %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @category_field.value %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @category_field.category %>
+</p>
+
+<%= link_to 'Edit', edit_category_field_path(@category_field) %> |
+<%= link_to 'Back', category_fields_path %>

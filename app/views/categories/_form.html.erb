@@ -11,15 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
   <div class="field">
     <%= f.label :parent_id %>
     <%= f.collection_select :parent_id, @categories, :id, :name, prompt: '' %>
   </div>
+
+    <h3>Fields:</h3>
+    <div id='category_fields'>
+      <%= f.fields_for :category_fields do |task| %>
+        <%= render 'category_field_fields', :f => task %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association 'add task', f, :category_fields %>
+      </div>
+    </div>
+    <% f.button do %>
+      <%= f.submit 'Save' %>
+    <% end %>
+
 
   <div class="actions">
     <%= f.submit %>

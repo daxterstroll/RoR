@@ -56,11 +56,12 @@ class CategoriesController < ApplicationController
   end
 
   private
-    def set_category
-      @category = Category.find(params[:id])
-    end
 
-    def category_params
-      params.require(:category).permit(:name, :parent_id)
-    end
+  def set_category
+    @category = Category.find(params[:id])
+  end
+
+  def category_params
+    params.require(:category).permit(:name, :parent_id, category_field_attributes: [:id, :filter, :value, :_destroy])
+  end
 end
