@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ValueTest < ActiveSupport::TestCase
+class FiltersValueTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
