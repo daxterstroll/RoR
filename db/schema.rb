@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529124709) do
+ActiveRecord::Schema.define(version: 20180529130235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 20180529124709) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "value_id"
+    t.integer  "item_id"
   end
 
+  add_index "filters", ["item_id"], name: "index_filters_on_item_id", using: :btree
   add_index "filters", ["value_id"], name: "fki_option_id", using: :btree
 
   create_table "filters_items", force: :cascade do |t|
@@ -84,11 +86,9 @@ ActiveRecord::Schema.define(version: 20180529124709) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "category_id"
-    t.integer  "filter_id"
   end
 
   add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
-  add_index "items", ["filter_id"], name: "fki_filter_id", using: :btree
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(version: 20180529124709) do
   add_foreign_key "bookings", "users"
   add_foreign_key "category_fields", "categories"
   add_foreign_key "filters", "\"values\"", column: "value_id", name: "option_id"
+  add_foreign_key "filters", "items"
   add_foreign_key "items", "categories"
-  add_foreign_key "items", "filters", name: "filter_id"
   add_foreign_key "items", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "users", "cities"

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # connected bookings
   has_many :bookings
   # connected items
-  has_many :items
+  has_many :items , dependent: :destroy
   # connected choice city
   belongs_to :city
   # connected all reviews for all items users

@@ -6,9 +6,6 @@ class Item < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  has_many :filters
-  has_many :values
-
   def self.search(search)
     if search
       where(["name LIKE ?","%#{search}%"])
