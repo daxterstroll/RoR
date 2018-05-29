@@ -1,11 +1,33 @@
-<div class='nested-fields'>
-  <div class="field">
-    <%= f.label :filter %>
-    <%= f.text_field :filter %>
-  </div>
-  <div class="field">
-  <%= f.label :value %>
-  <%= f.text_field :value %>
-</div>
-  <%= link_to_remove_association "remove task", f %>
+<div class="nested-fields">
+
+  <% if f.object._destroy %>
+    <%= hidden_field_tag("#{f.object_name}[_destroy]", '1') %>
+  <% else %>
+    <%= link_to_remove_association 'remove', f, :confirm => 'Are you sure?' %>
+
+    <% if f.object.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(f.object.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% f.object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :filter %>
+      <%= f.text_field :filter %>
+    </div>
+
+    <div class="field">
+      <%= f.label :value %><br>
+      <%= f.text_area :value %>
+    </div>
+
+  <% end %>
+
+
 </div>
