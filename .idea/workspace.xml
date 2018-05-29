@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bcc148dd-bb0f-449f-87a7-0b2dfcea43ff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/values.coffee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/values.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/values_controller.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/values_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/category.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/filter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/filter.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/item.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/value.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/_value.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/values/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180529104759_create_values.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20180529105131_add_filter_ref_to_values.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/values_controller_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/values.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/value_test.rb" beforeDir="false" />
-    </list>
+    <list default="true" id="bcc148dd-bb0f-449f-87a7-0b2dfcea43ff" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -101,8 +76,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20180529211056_create_join_tablesfilters_value_items.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb">
+      <file leaf-file-name="20180529211504_create_join_table_filters_value_item.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
@@ -144,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/cities/_city.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/cities/index.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/cities/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/cities/edit.html.erb" />
@@ -195,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/models/filters_value.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180529210610_create_join_tables_item_filters_value.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb" />
       </list>
     </option>
   </component>
@@ -208,8 +183,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="207" />
-    <option name="y" value="266" />
+    <option name="x" value="717" />
+    <option name="y" value="291" />
     <option name="width" value="1152" />
     <option name="height" value="789" />
   </component>
@@ -316,15 +291,15 @@
       <workItem from="1527605730669" duration="3892000" />
       <workItem from="1527610220370" duration="224000" />
       <workItem from="1527626010707" duration="946000" />
-      <workItem from="1527626979818" duration="1418000" />
+      <workItem from="1527626979818" duration="2150000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77910000" />
+    <option name="totallyTimeSpent" value="78642000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="416" y="374" width="1152" height="789" extended-state="0" />
+    <frame x="717" y="291" width="1152" height="789" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36805555" />
@@ -356,18 +331,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/categories/_category.json.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -583,6 +546,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211427_create_join_table_filters_value_items.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180529205442_add_filter_ref_to_filters_value.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -590,7 +567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
