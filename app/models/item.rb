@@ -1,10 +1,14 @@
 class Item < ActiveRecord::Base
-  # connected category
-  belongs_to :category
+
   # connected reviews
   has_many :reviews, as: :reviewable
   # connected user
   belongs_to :user
+
+  belongs_to :category
+  has_many :filters, through: :category
+  has_many :values, through: :filters
+
 
   def self.search(search)
     if search

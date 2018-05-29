@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528201413) do
+ActiveRecord::Schema.define(version: 20180529111203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20180528201413) do
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
 
+  create_table "categories_filters", id: false, force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "filter_id"
+  end
+
+  add_index "categories_filters", ["category_id"], name: "index_categories_filters_on_category_id", using: :btree
+  add_index "categories_filters", ["filter_id"], name: "index_categories_filters_on_filter_id", using: :btree
+
   create_table "category_fields", force: :cascade do |t|
     t.string   "filter"
     t.string   "value"
@@ -52,6 +60,15 @@ ActiveRecord::Schema.define(version: 20180528201413) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "filters", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
+  end
+
+  add_index "filters", ["category_id"], name: "index_filters_on_category_id", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -84,11 +101,22 @@ ActiveRecord::Schema.define(version: 20180528201413) do
 
   add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree
 
+  create_table "values", force: :cascade do |t|
+    t.string   "option"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "filter_id"
+  end
+
+  add_index "values", ["filter_id"], name: "index_values_on_filter_id", using: :btree
+
   add_foreign_key "bookings", "items"
   add_foreign_key "bookings", "users"
   add_foreign_key "category_fields", "categories"
+  add_foreign_key "filters", "categories"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "reviews", "users"
   add_foreign_key "users", "cities"
+  add_foreign_key "values", "filters"
 end

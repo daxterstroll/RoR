@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :filters
+  resources :values
+  resources :filters
   resources :category_fields
   resources :categories
   resources :cities
