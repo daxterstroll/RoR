@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
   # connected items
   has_many :items
   has_ancestry
+
   has_and_belongs_to_many :filters
 
 
