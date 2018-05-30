@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bcc148dd-bb0f-449f-87a7-0b2dfcea43ff" name="Default" comment="" />
+    <list default="true" id="bcc148dd-bb0f-449f-87a7-0b2dfcea43ff" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -53,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -71,13 +75,22 @@
         <entry file="file://$PROJECT_DIR$/db/migrate/20180529205442_add_filter_ref_to_filters_value.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20180529211504_create_join_table_filters_value_item.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="20180529211504_create_join_table_filters_value_item.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180530113200_create_join_table_categories_filters.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180530113200_create_join_table_categories_filters.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
@@ -89,14 +102,9 @@
         <entry file="file://$PROJECT_DIR$/db/migrate/20180518110453_add_user_ref_to_reviews.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="65" />
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="65" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="city.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/city.rb">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -119,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/cities/index.json.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/cities/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/cities/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/cities/index.html.erb" />
@@ -170,6 +177,7 @@
         <option value="$PROJECT_DIR$/db/migrate/20180529210610_create_join_tables_item_filters_value.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180530113200_create_join_table_categories_filters.rb" />
       </list>
     </option>
   </component>
@@ -182,18 +190,17 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="717" />
-    <option name="y" value="291" />
-    <option name="width" value="1152" />
-    <option name="height" value="789" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="993" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -228,6 +235,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,18 +299,19 @@
       <workItem from="1527605730669" duration="3892000" />
       <workItem from="1527610220370" duration="224000" />
       <workItem from="1527626010707" duration="946000" />
-      <workItem from="1527626979818" duration="2150000" />
+      <workItem from="1527626979818" duration="2238000" />
+      <workItem from="1527679874284" duration="361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78642000" />
+    <option name="totallyTimeSpent" value="79091000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="717" y="291" width="1152" height="789" extended-state="0" />
+    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36805555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13484359" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5056665" side_tool="true" weight="0.32874617" />
@@ -316,11 +325,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32730263" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32730263" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49865085" weight="0.32934782" />
     </layout>
   </component>
@@ -331,13 +340,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/categories/_category.json.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/category_fields_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -472,7 +474,7 @@
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -483,13 +485,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529205422_add_filter_refto_filters_value.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529205422_add_filter_refto_filters_value.rb" />
     <entry file="file://$PROJECT_DIR$/app/models/category.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -500,7 +496,7 @@
     <entry file="file://$PROJECT_DIR$/db/migrate/20180518110453_add_user_ref_to_reviews.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="65" />
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -518,56 +514,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529205840_create_items_filters_values_join_table.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529210610_create_join_tables_item_filters_value.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529210800_create_join_tables_filters_value_item.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529210913_create_join_tables_filters_value_items.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211427_create_join_table_filters_value_items.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529205840_create_items_filters_values_join_table.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529210610_create_join_tables_item_filters_value.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529210800_create_join_tables_filters_value_item.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529210913_create_join_tables_filters_value_items.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211056_create_join_tablesfilters_value_items.rb" />
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180529211427_create_join_table_filters_value_items.rb" />
     <entry file="file://$PROJECT_DIR$/db/migrate/20180529205442_add_filter_ref_to_filters_value.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180529211504_create_join_table_filters_value_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180530113200_create_join_table_categories_filters.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />

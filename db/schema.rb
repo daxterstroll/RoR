@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180529211504) do
+ActiveRecord::Schema.define(version: 20180530113200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20180529211504) do
   end
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+
+  create_table "categories_filters", id: false, force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "filter_id",   null: false
+  end
+
+  add_index "categories_filters", ["category_id", "filter_id"], name: "index_categories_filters_on_category_id_and_filter_id", using: :btree
+  add_index "categories_filters", ["filter_id", "category_id"], name: "index_categories_filters_on_filter_id_and_category_id", using: :btree
 
   create_table "category_fields", force: :cascade do |t|
     t.string   "filter"
