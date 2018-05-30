@@ -1,12 +1,9 @@
 class User < ActiveRecord::Base
-  # connected reviews
-  has_many :reviews, as: :reviewable
-  # connected bookings
-  has_many :bookings
-  # connected items
-  has_many :items , dependent: :destroy
-  # connected choice city
+  has_many :reviews, as: :reviewable, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :items, dependent: :destroy
   belongs_to :city
-  # connected all reviews for all items users
-  has_many :items_reviews, through: :items, source: :reviews
+  has_many :items_reviews, through: :items, source: :reviews, dependent: :destroy
+
+  validates :name, :city_id, presence: true
 end

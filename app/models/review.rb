@@ -1,9 +1,9 @@
 class Review < ActiveRecord::Base
-  # connect choice users
   belongs_to :user
-  # connect polymorphic
   belongs_to :reviewable, polymorphic: true, required: true
-  # checking on booking
+
+
+  validates :user_id, :message, presence: true
   validate :must_be_booking
   def must_be_booking
     if reviewable.is_a?(Item)

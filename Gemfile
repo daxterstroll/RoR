@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
-gem "cocoon"
 gem 'bcrypt', '~> 3.1.7'
 gem 'capistrano-rails', group: :development
+gem 'cocoon'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'date_validator'
 gem 'foreman'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
