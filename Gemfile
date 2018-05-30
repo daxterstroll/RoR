@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
+gem 'ancestry'
 gem 'bcrypt', '~> 3.1.7'
 gem 'capistrano-rails', group: :development
 gem 'cocoon'
@@ -10,7 +11,7 @@ gem 'foreman'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'nokogiri', '~> 1.8.2'
-gem 'pg', '~> 0.15'
+gem 'pg', '~> 0.20.0'
 gem 'rails', '4.2.9'
 gem 'rails_12factor'
 gem 'rails_admin', '~> 1.3'
@@ -21,7 +22,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 gem 'will_paginate', '~> 3.1.0'
-gem 'ancestry'
+
 group :development, :test do
   gem 'byebug'
 end
