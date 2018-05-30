@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
@@ -10,8 +12,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @item = Item.new(item_params)
@@ -48,13 +49,12 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def item_params
-      params.require(:item).permit(:user_id, :name, :category_id)
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def item_params
+    params.require(:item).permit(:user_id, :name, :category_id)
+  end
 end

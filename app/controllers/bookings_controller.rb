@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
 
@@ -9,13 +11,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  def show
+  def show; end
 
-  end
-
-  def edit
-
-  end
+  def edit; end
 
   def create
     @booking = Booking.new(booking_params)
@@ -52,13 +50,12 @@ class BookingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_booking
-      @booking = Booking.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def booking_params
-      params.require(:booking).permit(:user_id, :item_id, :started_at, :ended_on)
-    end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:user_id, :item_id, :started_at, :ended_on)
+  end
 end

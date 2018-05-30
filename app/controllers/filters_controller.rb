@@ -1,31 +1,22 @@
-class FiltersController < ApplicationController
-  before_action :set_filter, only: [:show, :edit, :update, :destroy]
+# frozen_string_literal: true
 
-  # GET /filters
-  # GET /filters.json
+class FiltersController < ApplicationController
+  before_action :set_filter, only: %i[show edit update destroy]
+
   def index
     @filters = Filter.all
   end
 
-  # GET /filters/1
-  # GET /filters/1.json
-  def show
-  end
+  def show; end
 
-  # GET /filters/new
   def new
     @filter = Filter.new
   end
 
-  # GET /filters/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /filters
-  # POST /filters.json
   def create
     @filter = Filter.new(filter_params)
-
     respond_to do |format|
       if @filter.save
         format.html { redirect_to @filter, notice: 'Filter was successfully created.' }
@@ -37,8 +28,6 @@ class FiltersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /filters/1
-  # PATCH/PUT /filters/1.json
   def update
     respond_to do |format|
       if @filter.update(filter_params)
@@ -51,8 +40,6 @@ class FiltersController < ApplicationController
     end
   end
 
-  # DELETE /filters/1
-  # DELETE /filters/1.json
   def destroy
     @filter.destroy
     respond_to do |format|
@@ -62,13 +49,12 @@ class FiltersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_filter
-      @filter = Filter.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def filter_params
-      params.require(:filter).permit(:name)
-    end
+  def set_filter
+    @filter = Filter.find(params[:id])
+  end
+
+  def filter_params
+    params.require(:filter).permit(:name)
+  end
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: %i[show edit update destroy]
 
   def index
     @categories = Category.all
@@ -62,6 +64,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :parent_id, category_fields_attributes: [:id, :filter, :value, :_destroy])
+    params.require(:category).permit(:name, :parent_id, category_fields_attributes: %i[id filter value _destroy])
   end
 end

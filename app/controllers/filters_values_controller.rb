@@ -1,31 +1,22 @@
-class FiltersValuesController < ApplicationController
-  before_action :set_filters_value, only: [:show, :edit, :update, :destroy]
+# frozen_string_literal: true
 
-  # GET /filters_values
-  # GET /filters_values.json
+class FiltersValuesController < ApplicationController
+  before_action :set_filters_value, only: %i[show edit update destroy]
+
   def index
     @filters_values = FiltersValue.all
   end
 
-  # GET /filters_values/1
-  # GET /filters_values/1.json
-  def show
-  end
+  def show; end
 
-  # GET /filters_values/new
   def new
     @filters_value = FiltersValue.new
   end
 
-  # GET /filters_values/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /filters_values
-  # POST /filters_values.json
   def create
     @filters_value = FiltersValue.new(filters_value_params)
-
     respond_to do |format|
       if @filters_value.save
         format.html { redirect_to @filters_value, notice: 'Filters value was successfully created.' }
@@ -37,8 +28,6 @@ class FiltersValuesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /filters_values/1
-  # PATCH/PUT /filters_values/1.json
   def update
     respond_to do |format|
       if @filters_value.update(filters_value_params)
@@ -51,8 +40,6 @@ class FiltersValuesController < ApplicationController
     end
   end
 
-  # DELETE /filters_values/1
-  # DELETE /filters_values/1.json
   def destroy
     @filters_value.destroy
     respond_to do |format|
@@ -62,13 +49,12 @@ class FiltersValuesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_filters_value
-      @filters_value = FiltersValue.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def filters_value_params
-      params.require(:filters_value).permit(:option)
-    end
+  def set_filters_value
+    @filters_value = FiltersValue.find(params[:id])
+  end
+
+  def filters_value_params
+    params.require(:filters_value).permit(:option)
+  end
 end

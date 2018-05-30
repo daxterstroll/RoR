@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[show edit update destroy]
 
@@ -11,7 +13,6 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
-
     respond_to do |format|
       if @city.save
         format.html { redirect_to @city, notice: 'City was successfully created.' }
@@ -44,13 +45,12 @@ class CitiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_city
-      @city = City.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def city_params
-      params.require(:city).permit(:name)
-    end
+  def set_city
+    @city = City.find(params[:id])
+  end
+
+  def city_params
+    params.require(:city).permit(:name)
+  end
 end
