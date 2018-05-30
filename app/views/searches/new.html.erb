@@ -12,6 +12,11 @@
     <%= s.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
   </div>
 
+  <div class="field">
+    <%= s.label :filters_value_id %><br>
+    <%= s.collection_select :filters_value_id, FiltersValue.order(:option), :id, :option, include_blank: true %>
+  </div>
+
   <div class="actions"><%= s.submit "Search", class: "pure_button pure_button_primary" %></div>
 
 <% end %>
