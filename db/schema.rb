@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 20180530164052) do
   add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "ancestry"
+    t.string "name"
+    t.string "ancestry"
   end
 
   add_index "categories", ["ancestry"], name: "index_categories_on_ancestry", using: :btree
@@ -46,32 +44,24 @@ ActiveRecord::Schema.define(version: 20180530164052) do
   add_index "categories_filters", ["filter_id", "category_id"], name: "index_categories_filters_on_filter_id_and_category_id", using: :btree
 
   create_table "category_fields", force: :cascade do |t|
-    t.string   "filter"
-    t.string   "value"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string  "filter"
+    t.string  "value"
+    t.integer "category_id"
   end
 
   add_index "category_fields", ["category_id"], name: "index_category_fields_on_category_id", using: :btree
 
   create_table "cities", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "filters", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "filters_values", force: :cascade do |t|
-    t.string   "option"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "filter_id"
+    t.string  "option"
+    t.integer "filter_id"
   end
 
   add_index "filters_values", ["filter_id"], name: "index_filters_values_on_filter_id", using: :btree
@@ -96,12 +86,12 @@ ActiveRecord::Schema.define(version: 20180530164052) do
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
+    t.string   "message"
     t.string   "reviewable_type"
     t.integer  "reviewable_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "user_id"
-    t.string   "message",         limit: 150
   end
 
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree

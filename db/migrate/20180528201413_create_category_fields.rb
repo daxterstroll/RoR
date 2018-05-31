@@ -4,8 +4,6 @@ class CreateCategoryFields < ActiveRecord::Migration
       t.string :filter
       t.string :value
       t.belongs_to :category, index: true, foreign_key: true
-
-      t.timestamps null: false
     end
   end
 end
