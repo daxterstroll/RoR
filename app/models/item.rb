@@ -13,4 +13,9 @@ class Item < ActiveRecord::Base
       all
     end
   end
+
+  scope :by_name, -> { where('name LIKE ?', "%#{keywords}%") }
+  scope :by_category, -> { where('category_id = ?', "%#{category_id}%") }
+  scope :by_option, -> { joins(:filters_values).where(filters_values: { id: 1 }) }
+
 end
