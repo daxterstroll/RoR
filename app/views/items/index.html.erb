@@ -10,6 +10,12 @@
   <%= submit_tag "Search" %>
 <% end %>
 
+<%= form_tag items_path, :method => 'get' do %>
+  <%= text_field_tag :name, params[:name] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
 <%= link_to "Advanced Search", new_search_path%>
 
 <table>
