@@ -4,12 +4,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-    if params[:search]
-      @items = Item.search(params[:search]).paginate(page: params[:page],
-                                                     per_page: 5)
-    else
-      @items.all
-    end
+    @items = Item.search(params[:search]).paginate(page: params[:page],
+                                                   per_page: 5)
   end
 
   def new
