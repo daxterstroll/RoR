@@ -4,19 +4,19 @@
 
 <%= render 'shared/submenu' %>
 
-<%=  link_to 'New Item', new_item_path %>
-<%= form_tag items_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %>
-<% end %>
+<hr>
 
 <%= form_tag items_path, :method => 'get' do %>
-  <%= text_field_tag :name, params[:name] %>
+  <%= text_field_tag :name, params[:name], placeholder: 'Enter search term name...' %>
+  <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]), include_blank: true %>
+  <%= select_tag :filters_value_id, options_from_collection_for_select(FiltersValue.all, :id, :option, params[:filters_value_id]), include_blank: true %>
   <%= submit_tag "Search" %>
 <% end %>
-
 
 <%= link_to "Advanced Search", new_search_path%>
+<hr>
+
+<%=  link_to 'New Item', new_item_path %>
 
 <table>
   <thead>

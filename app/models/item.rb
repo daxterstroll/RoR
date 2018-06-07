@@ -6,14 +6,6 @@ class Item < ActiveRecord::Base
 
   validates :name, :category_id, :user_id, presence: true
 
-  def self.search(search)
-    if search
-      where('name LIKE ?', "%#{search}%")
-    else
-      all
-    end
-  end
-
   scope :by_name, ->(name) { where('name LIKE ?', "%#{name}%") }
   scope :by_category, ->(category_id) { where(category_id: category_id) }
   scope :by_option, lambda { |filters_value_id|

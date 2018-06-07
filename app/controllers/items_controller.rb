@@ -4,8 +4,10 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-    @items = Item.search(params[:search]).paginate(page: params[:page],
-                                                   per_page: 5)
+    @items = Item.all.paginate(page: params[:page], per_page: 5)
+    @items = @items.by_name(params[:name]) if params[:name].present?
+    @items = @items.by_category(params[:category_id]) if params[:category_id].present?
+    @items = @items.by_option(params[:filters_value_id]) if params[:filters_value_id].present?
   end
 
   def new
@@ -57,6 +59,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:user_id, :name, :category_id)
+    params.require(:item).permit(:user_id, :name, :category_id, :days)
   end
 end
