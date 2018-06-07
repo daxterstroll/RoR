@@ -2,7 +2,6 @@
 <html>
 <head>
   <link href="<%= image_path("favicon.ico") %>" rel="shortcut icon" />
-  <%= stylesheet_link_tag 'https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,29 +9,25 @@
 <body>
 
 <div class="container">
-<div class="header clearfix">
-  <nav>
-    <ul class="nav nav-pills pull-right">
-      <li role="presentation" class="active" ></li>
+  <div class="header clearfix">
+    <h3 class="text-muted-active">TravelMateBlog</h3>
+    <ul class="nav nav-pills pull-left">
+      <li role="presentation"><%= link_to "Home", root_path %></li>
+      <li role="presentation"><%= link_to "User", users_path %></li>
+      <li role="presentation"><%= link_to "Item", items_path %></li>
+      <li role="presentation"><%= link_to "Category", categories_path %></li>
+      <li role="presentation"><%= link_to "Booking", bookings_path %></li>
+      <li role="presentation"><%= link_to "Review", reviews_path %></li>
+      <li role="presentation"><%= link_to "City", cities_path %></li>
+      <li role="presentation"><%= link_to "About", about_path %></li>
     </ul>
-  </nav>
-  <h3 class="text-muted-active">TravelMateBlog</h3>
-  <ul class="nav nav-pills pull-left">
-    <li role="presentation"><%= link_to "Home", root_path %></li>
-    <li role="presentation"><%= link_to "User", users_path %></li>
-    <li role="presentation"><%= link_to "Item", items_path %></li>
-    <li role="presentation"><%= link_to "Category", categories_path %></li>
-    <li role="presentation"><%= link_to "Booking", bookings_path %></li>
-    <li role="presentation"><%= link_to "Review", reviews_path %></li>
-    <li role="presentation"><%= link_to "City", cities_path %></li>
-    <li role="presentation"><%= link_to "About", about_path %></li>
-  </ul>
-</div>
-  <div class="container">
-  <div class="starter-template">
-    <%= yield %>
   </div>
-</div></div>
+  <div class="container">
+    <div class="starter-template">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
