@@ -16,12 +16,10 @@ class Item < ActiveRecord::Base
     where(Item.arel_table[:daily_price].lteq(price / days))
   }
 
-  scope :test, lambda { |start_date, end_date|
-    joins(:bookings).where(Booking.arel_table[:started_at].lteq(end_date))
-                    .where(Booking.arel_table[:ended_on].gteq(start_date))
-  }
-
-  # scope :test1, ->(star,ends)
-
-  # Model.where('event_start < ? AND event_end > ?', view_end, view_start)
+  def self.test1(start_date, end_date)
+    ids = joins(:bookings).where(Booking.arel_table[:started_at].lteq(end_date))
+                          .where(Booking.arel_table[:ended_on].gteq(start_date))
+                          .ids
+    Item.where.not(id: ids)
+  end
 end
